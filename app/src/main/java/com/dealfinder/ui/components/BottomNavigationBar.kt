@@ -1,10 +1,14 @@
 package com.dealfinder.ui.components
 
 import androidx.compose.material.icons.Icons
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.filled.CalendarMonth
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Search
+import androidx.compose.material.icons.outlined.DateRange
 import androidx.compose.material.icons.outlined.FavoriteBorder
 import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material.icons.outlined.PersonOutline
@@ -17,6 +21,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
@@ -58,8 +64,8 @@ fun BottomNavigationBar(
         BottomNavItem(
             route = NavRoutes.BOOKINGS,
             label = "Buchungen",
-            selectedIcon = Icons.Filled.Person,
-            unselectedIcon = Icons.Outlined.PersonOutline
+            selectedIcon = Icons.Filled.CalendarMonth,
+            unselectedIcon = Icons.Outlined.DateRange
         ),
         BottomNavItem(
             route = NavRoutes.PROFILE,
@@ -85,9 +91,12 @@ fun BottomNavigationBar(
 
     if (onBottomRoute) {
         NavigationBar(
-            modifier = modifier,
+            modifier = modifier
+                .padding(horizontal = 12.dp, vertical = 8.dp)
+                .clip(RoundedCornerShape(24.dp)),
             containerColor = MaterialTheme.colorScheme.surface,
-            contentColor = MaterialTheme.colorScheme.onSurface
+            contentColor = MaterialTheme.colorScheme.onSurface,
+            tonalElevation = 6.dp
         ) {
             items.forEach { item ->
                 val destinationRoute = currentDestination?.route
@@ -123,8 +132,10 @@ fun BottomNavigationBar(
                             style = MaterialTheme.typography.labelSmall
                         )
                     },
+                    alwaysShowLabel = false,
                     colors = androidx.compose.material3.NavigationBarItemDefaults.colors(
-                        selectedIconColor = MaterialTheme.colorScheme.primary,
+                        indicatorColor = MaterialTheme.colorScheme.primaryContainer,
+                        selectedIconColor = MaterialTheme.colorScheme.onPrimaryContainer,
                         selectedTextColor = MaterialTheme.colorScheme.primary,
                         unselectedIconColor = MaterialTheme.colorScheme.onSurfaceVariant,
                         unselectedTextColor = MaterialTheme.colorScheme.onSurfaceVariant

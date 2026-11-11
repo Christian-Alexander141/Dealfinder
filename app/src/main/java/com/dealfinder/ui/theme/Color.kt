@@ -2,34 +2,33 @@ package com.dealfinder.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-// Dealfinder Brand Colors
-val PrimaryBlue = Color(0xFF2196F3)
-val PrimaryDarkBlue = Color(0xFF1976D2)
-val PrimaryLightBlue = Color(0xFFBBDEFB)
+// Dealfinder brand palette: confident indigo with a fresh mint accent.
+val PrimaryBlue = Color(0xFF4F46E5)
+val PrimaryDarkBlue = Color(0xFF3730A3)
+val PrimaryLightBlue = Color(0xFFE0E7FF)
 
-val SecondaryOrange = Color(0xFFFF9800)
-val SecondaryDarkOrange = Color(0xFFF57C00)
-val SecondaryLightOrange = Color(0xFFFFE0B2)
+val SecondaryOrange = Color(0xFFF59E0B)
+val SecondaryDarkOrange = Color(0xFFB45309)
+val SecondaryLightOrange = Color(0xFFFFF3D6)
 
-val AccentGreen = Color(0xFF4CAF50)
-val AccentRed = Color(0xFFF44336)
+val AccentGreen = Color(0xFF0F9D7A)
+val AccentRed = Color(0xFFDC4C64)
 
-// Neutral Colors
-val Background = Color(0xFFF5F5F5)
+// Light neutral surfaces
+val Background = Color(0xFFF7F8FC)
 val Surface = Color(0xFFFFFFFF)
-val SurfaceVariant = Color(0xFFE0E0E0)
+val SurfaceVariant = Color(0xFFEAECF4)
 
-// Text Colors
+// Text colors
 val OnPrimary = Color(0xFFFFFFFF)
 val OnSecondary = Color(0xFFFFFFFF)
-val OnSurface = Color(0xFF212121)
-val OnSurfaceVariant = Color(0xFF757575)
+val OnSurface = Color(0xFF151A2D)
+val OnSurfaceVariant = Color(0xFF667085)
 
-// Old colors for compatibility
+// Kept for compatibility with generated/template code.
 val Purple80 = Color(0xFFD0BCFF)
 val PurpleGrey80 = Color(0xFFCCC2DC)
 val Pink80 = Color(0xFFEFB8C8)
-
-val Purple40 = Color(0xFF6650a4)
-val PurpleGrey40 = Color(0xFF625b71)
+val Purple40 = Color(0xFF6650A4)
+val PurpleGrey40 = Color(0xFF625B71)
 val Pink40 = Color(0xFF7D5260)
