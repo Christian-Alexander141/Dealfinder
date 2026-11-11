@@ -51,7 +51,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.dealfinder.data.models.Booking
-import com.dealfinder.data.models.BookingDisplayItem
+import com.dealfinder.viewmodel.BookingDisplayItem
 import com.dealfinder.data.models.BookingStatus
 import com.dealfinder.ui.theme.DealfinderTheme
 import com.dealfinder.viewmodel.BookingViewModel
@@ -174,7 +174,7 @@ fun MyBookingsScreen(
                     }
                 }
 
-                visibleItems!!.isEmpty() -> {
+                visibleItems.isEmpty() -> {
                     EmptyState(
                         isPast = showPast,
                         onBookAgain = null
@@ -190,7 +190,7 @@ fun MyBookingsScreen(
                         ),
                         verticalArrangement = Arrangement.spacedBy(10.dp)
                     ) {
-                        items(visibleItems!!, key = { it.booking.id }) { item ->
+                        items(visibleItems, key = { it.booking.id }) { item ->
                             BookingCard(
                                 item = item,
                                 dateFormatter = dateFormatter,
